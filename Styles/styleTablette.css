@@ -1,0 +1,64 @@
+/* Style tablette (681px → 799px) : même structure que mobile, avec plus d’espace */
+
+/* Header */
+.header {
+  margin: 15px 40px;
+}
+
+.header-logo {
+  height: 90px;
+}
+
+/* Burger : légèrement plus grand pour la zone de touch */
+.header-burger {
+  width: 48px;
+  height: 48px;
+}
+
+.header-burger .burger {
+  width: 30px;
+  height: 26px;
+}
+
+.header-burger .burger div:nth-child(1),
+.header-burger .burger div:nth-child(3) {
+  width: 22px;
+}
+.header-burger .burger div:nth-child(2) {
+  width: 30px;
+}
+
+.header-burger.is-open .burger div:nth-child(1),
+.header-burger.is-open .burger div:nth-child(3) {
+  width: 26px;
+}
+
+/* Drawer : plus large, plus de respiration */
+.drawer {
+  width: min(380px, 75vw);
+  padding: 1.5rem 2rem;
+  box-shadow: -6px 0 32px rgba(0, 0, 0, 0.35);
+}
+
+.drawer-logo {
+  height: 88px;
+}
+
+.drawer-sep {
+  margin: 1.25rem 0 1.75rem;
+}
+
+.drawer-nav-list {
+  gap: 0.65rem;
+}
+
+.drawer-nav-list a {
+  padding: 0.85rem 0;
+  font-size: 1.15rem;
+}
+
+.drawer-cv {
+  margin-top: 2.5rem;
+  padding: 1.1rem 1.75rem;
+  font-size: 1rem;
+}
