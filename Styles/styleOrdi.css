@@ -1,12 +1,16 @@
 /* Header (ordinateur) */
 
-.header {
+.header-burger {
+  display: none;
+}
+
+.header-center,
+.header-right {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
+}
+
+.header {
   margin: 10px 50px;
-  z-index: 1000;
   transition:
     background-color 0.4s ease,
     padding 0.4s ease,

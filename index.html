@@ -18,7 +18,14 @@
                 <img src="Images/svg/logo.svg" alt="Logo Trystan Roussel">
             </a>
         </div>
-        <nav class="header-center" aria-label="Navigation principale">
+        <button type="button" class="header-burger">
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </button>
+        <nav class="header-center">
             <ul class="header-nav-list">
                 <li><a href="#about">A&nbsp;propos</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -30,6 +37,26 @@
             <a href="Images/CV-ROUSSEL_Trystan-DeveloppeurWeb.pdf" download class="header-cv">Télécharger mon CV</a>
         </div>
     </header>
+
+    <!-- Menu mobile (drawer) -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="drawer" id="drawer-menu">
+        <div class="drawer-header">
+            <a class="drawer-logo" href="">
+                <img src="Images/svg/logo.svg" alt="Logo Trystan Roussel">
+            </a>
+        </div>
+        <hr class="drawer-sep">
+        <nav class="drawer-nav">
+            <ul class="drawer-nav-list">
+                <li><a href="#about">A propos</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="Images/CV-ROUSSEL_Trystan-DeveloppeurWeb.pdf" download class="drawer-cv">Télécharger mon CV</a>
+    </div>
 
     <main>
         <section id="home">
