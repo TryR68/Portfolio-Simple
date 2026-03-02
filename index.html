@@ -6,36 +6,29 @@
     <title>Trystan Roussel | Développeur Web</title>
     <link rel="stylesheet" href="Styles/style.css">
     <link rel="stylesheet" media="(width > 680px)" href="Styles/styleTablette.css">
-    <link rel="stylesheet" media="(min-width: 1200px)" href="Styles/styleOrdi.css">
+    <link rel="stylesheet" media="(min-width: 800px)" href="Styles/styleOrdi.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="Images/svg/logo.svg">
 </head>
 <body>
     <div class="overlay2"></div>
-    <header>
-
+    <header class="header">
         <div class="header-left">
-            <div class="logo">
-                <a href=""><img src="Images/svg/logo.svg" alt="logo"></a>
-            </div>
+            <a class="header-logo" href="">
+                <img src="Images/svg/logo.svg" alt="Logo Trystan Roussel">
+            </a>
         </div>
-
-        <nav class="header-right">
-            <div class="burger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-
-            <ul id="menu-right">
-                <li><a href="#about">A propos</a></li>
+        <nav class="header-center" aria-label="Navigation principale">
+            <ul class="header-nav-list">
+                <li><a href="#about">A&nbsp;propos</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projet</a></li>
+                <li><a href="#projects">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-
-            <a href="Images/CV-ROUSSEL_Trystan-DeveloppeurWeb.pdf" download class="bouton-cv">Télécharger mon CV</a>
         </nav>
+        <div class="header-right">
+            <a href="Images/CV-ROUSSEL_Trystan-DeveloppeurWeb.pdf" download class="header-cv">Télécharger mon CV</a>
+        </div>
     </header>
 
     <main>

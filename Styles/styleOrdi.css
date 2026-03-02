@@ -1,0 +1,85 @@
+/* Header (ordinateur) */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 10px 50px;
+  z-index: 1000;
+  transition:
+    background-color 0.4s ease,
+    padding 0.4s ease,
+    top 0.4s ease,
+    transform 0.4s ease,
+    border-radius 0.4s ease;
+}
+
+.header-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-center .header-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-center .header-nav-list a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+.header-center .header-nav-list a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 0;
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+.header-center .header-nav-list a:hover::after,
+.header-center .header-nav-list a.active::after {
+  width: 100%;
+}
+
+.header-center .header-nav-list a.active {
+  color: var(--accent-color);
+}
+
+.header-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.header-cv {
+  background-color: var(--accent-color);
+  color: #f2f2f2;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.header-cv:hover {
+  filter: brightness(1.1);
+}

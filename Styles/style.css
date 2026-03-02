@@ -10,14 +10,26 @@ html {
   scroll-behavior: smooth;
 }
 
-root {
+:root {
   --background-color: #1c1c1c;
   --text-color: #f2f2f2;
   --accent-color: #dda15e;
 }
 
-/* Style du Header et du bg */
+/* Base */
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+/* Header (base) */
+.header-logo {
+  display: block;
+  height: 100px;
+  width: auto;
+}
+.header-logo img {
+  height: 100%;
+  width: auto;
+  display: block;
 }
