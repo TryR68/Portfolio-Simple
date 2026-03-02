@@ -30,7 +30,7 @@
             <ul id="menu-right">
                 <li><a href="#about">A propos</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Projet</a></li>
+                <li><a href="#projects">Projet</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
@@ -55,13 +55,114 @@
                 <i class="fa-solid fa-chevron-down"></i>
             </a>
         </section>
+
+
+        <section id="about" class="about">
+            <div class="about-inner">
+                <figure class="about-photo">
+                    <img src="Images/photo-profil.jpg" alt="Photo" width="400" height="500">
+                </figure>
+
+                <div class="about-content">
+                    <h2 class="about-title">A propos de moi</h2>
+                    <p class="about-intro">
+                        Étudiant passionné par le développement web, le design UI/UX et la création de contenus numériques. Curieux et motivé, je suis actuellement à la recherche d'une alternance pour mettre en pratique mes compétences techniques et créatives dans un environnement professionnel.
+                    </p>
+
+                    <div class="about-tabs" role="tablist" aria-label="Informations à propos de moi">
+                        <button type="button" class="about-tab active" role="tab" aria-selected="true" aria-controls="panel-langues" id="tab-langues" data-tab="langues">Langues</button>
+                        <button type="button" class="about-tab" role="tab" aria-selected="false" aria-controls="panel-softskills" id="tab-softskills" data-tab="softskills">Soft-Skills</button>
+                        <button type="button" class="about-tab" role="tab" aria-selected="false" aria-controls="panel-passions" id="tab-passions" data-tab="passions">Passions</button>
+                    </div>
+
+                    <div class="about-panels">
+                        <div class="about-panel active" id="panel-langues" role="tabpanel" aria-labelledby="tab-langues">
+                            <ul class="langues-list">
+                                <li class="langue-item">
+                                    <img class="langue-flag" src="Images/flags/france.svg" alt="" width="48" height="48">
+                                    <span class="langue-name">Français</span>
+                                    <span class="langue-level">Langue maternelle</span>
+                                </li>
+                                <li class="langue-item">
+                                    <img class="langue-flag" src="Images/flags/uk.svg" alt="" width="48" height="48">
+                                    <span class="langue-name">Anglais</span>
+                                    <span class="langue-level">Niveau B1-B2</span>
+                                </li>
+                                <li class="langue-item">
+                                    <img class="langue-flag" src="Images/flags/allemagne.svg" alt="" width="48" height="48">
+                                    <span class="langue-name">Allemand</span>
+                                    <span class="langue-level">Niveau A2</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="about-panel" id="panel-softskills" role="tabpanel" aria-labelledby="tab-softskills" hidden>
+                            <ul class="softskills-list">
+                                <li class="softskill-item">
+                                    <h3 class="softskill-title">Créatif</h3>
+                                    <p class="softskill-desc">J'apporte des solutions innovantes et créatives pour enrichir les projets et stimuler la réflexion.</p>
+                                </li>
+                                <li class="softskill-item">
+                                    <h3 class="softskill-title">Dépassement de soi</h3>
+                                    <p class="softskill-desc">Me pousse à relever des défis ambitieux et à progresser vers l'excellence.</p>
+                                </li>
+                                <li class="softskill-item">
+                                    <h3 class="softskill-title">Adaptabilité</h3>
+                                    <p class="softskill-desc">Me permet de m'adapter rapidement aux évolutions technologiques pour garantir une performance optimale.</p>
+                                </li>
+                                <li class="softskill-item">
+                                    <h3 class="softskill-title">Travail en équipe</h3>
+                                    <p class="softskill-desc">Permet de collaborer efficacement en favorisant l'écoute et la communication.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="about-panel" id="panel-passions" role="tabpanel" aria-labelledby="tab-passions" hidden>
+                            <ul class="passions-list">
+                                <li class="passion-item">
+                                    <span class="passion-label">Sport</span>
+                                    <i class="fa-solid fa-dumbbell passion-icon" aria-hidden="true"></i>
+                                </li>
+                                <li class="passion-item">
+                                    <span class="passion-label">Musique</span>
+                                    <i class="fa-solid fa-music passion-icon" aria-hidden="true"></i>
+                                </li>
+                                <li class="passion-item">
+                                    <span class="passion-label">Création de contenus</span>
+                                    <i class="fa-solid fa-lightbulb passion-icon" aria-hidden="true"></i>
+                                </li>
+                                <li class="passion-item">
+                                    <span class="passion-label">Développement Web</span>
+                                    <i class="fa-solid fa-code passion-icon" aria-hidden="true"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+        </section>
+
+        <section id="projects">
+        </section>
+
+        <section id="contact">
+        </section>
     </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>Trystan Roussel</p>
+                <p>Développeur Web</p>
+            </div>
+        </div>
+    </footer>
 
 
 
 
 </body>
-
-
 <script src="Scripts/script.js"></script>
 </html>
