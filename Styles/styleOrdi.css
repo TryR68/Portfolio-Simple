@@ -102,35 +102,33 @@
 }
 
 .about-inner {
-  flex-direction: row;
-  gap: 3rem;
-  align-items: flex-start;
-  max-width: 1200px;
-}
-
-.about-console {
-  flex-shrink: 0;
-  width: 380px;
-  min-width: 320px;
-}
-
-.about-content {
-  flex: 1;
-  min-width: 0;
+  max-width: 960px;
 }
 
 .about-title {
-  font-size: 2rem;
+  font-size: 1.85rem;
 }
 
 .about-grid {
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 #skills,
 #projects,
 #contact {
   padding: 4rem 50px;
+}
+
+.skills-section {
+  padding: 4rem 50px 5rem;
+}
+
+.skills-competences {
+  margin-bottom: 4rem;
+}
+
+.skills-arena {
+  height: 400px;
 }
 
 .footer-content {

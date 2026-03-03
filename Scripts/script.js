@@ -123,4 +123,87 @@
     var activeFile = document.querySelector('.explorer-file.is-active');
     if (activeFile) showProject(activeFile.getAttribute('data-project'));
   })();
+
+  /* Skills : bulles qui rebondissent + répulsion souris */
+  (function initSkillsBounce() {
+    var arena = document.getElementById('skills-arena');
+    if (!arena) return;
+
+    var bubbles = [];
+    var mouseX = -9999;
+    var mouseY = -9999;
+    var repulsionRadius = 120;
+    var repulsionForce = 0.8;
+
+    function getArenaRect() {
+      var r = arena.getBoundingClientRect();
+      return { left: r.left, top: r.top, width: r.width, height: r.height };
+    }
+
+    arena.addEventListener('mousemove', function (e) {
+      var r = getArenaRect();
+      mouseX = e.clientX - r.left;
+      mouseY = e.clientY - r.top;
+    });
+    arena.addEventListener('mouseleave', function () {
+      mouseX = -9999;
+      mouseY = -9999;
+    });
+
+    var items = arena.querySelectorAll('.skill-bubble');
+    var padding = 8;
+    var w = arena.offsetWidth;
+    var h = arena.offsetHeight;
+
+    items.forEach(function (el, i) {
+      var bw = el.offsetWidth;
+      var bh = el.offsetHeight;
+      var x = padding + Math.random() * (w - bw - 2 * padding);
+      var y = padding + Math.random() * (h - bh - 2 * padding);
+      var vx = (Math.random() - 0.5) * 1.2;
+      var vy = (Math.random() - 0.5) * 1.2;
+      el.style.left = x + 'px';
+      el.style.top = y + 'px';
+      bubbles.push({ el: el, x: x, y: y, vx: vx, vy: vy, w: bw, h: bh });
+    });
+
+    function step() {
+      w = arena.offsetWidth;
+      h = arena.offsetHeight;
+
+      bubbles.forEach(function (b) {
+        var bx = b.x + b.w / 2;
+        var by = b.y + b.h / 2;
+        if (mouseX >= 0 && mouseY >= 0) {
+          var dx = bx - mouseX;
+          var dy = by - mouseY;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < repulsionRadius && dist > 0) {
+            var f = (1 - dist / repulsionRadius) * repulsionForce;
+            var nx = dx / dist;
+            var ny = dy / dist;
+            b.vx += nx * f;
+            b.vy += ny * f;
+          }
+        }
+
+        b.vx *= 0.99;
+        b.vy *= 0.99;
+        b.x += b.vx;
+        b.y += b.vy;
+
+        if (b.x <= 0) { b.x = 0; b.vx = Math.abs(b.vx) * 0.9; }
+        if (b.y <= 0) { b.y = 0; b.vy = Math.abs(b.vy) * 0.9; }
+        if (b.x >= w - b.w) { b.x = w - b.w; b.vx = -Math.abs(b.vx) * 0.9; }
+        if (b.y >= h - b.h) { b.y = h - b.h; b.vy = -Math.abs(b.vy) * 0.9; }
+
+        b.el.style.left = b.x + 'px';
+        b.el.style.top = b.y + 'px';
+      });
+
+      requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  })();
 })();

@@ -79,64 +79,81 @@
 
         <section id="about" class="about">
             <div class="about-inner">
-                <div class="about-console">
-                    <div class="console-titlebar">
-                        <div class="console-dots">
-                            <span class="dot dot-close"></span>
-                            <span class="dot dot-minimize"></span>
-                            <span class="dot dot-maximize"></span>
-                        </div>
-                        <span class="console-filename"><span class="console-dot"></span> Portfolio.ts</span>
+                <h2 class="about-title">À propos de moi</h2>
+                <p class="about-intro">
+                    Étudiant passionné par le développement web, le design UI/UX et la création de contenus numériques. Curieux et motivé, je suis à la recherche d'une alternance pour mettre en pratique mes compétences dans un environnement professionnel.
+                </p>
+                <div class="about-grid">
+                    <div class="about-block">
+                        <h3 class="about-block-title"><i class="fa-solid fa-language"></i> Langues</h3>
+                        <ul class="about-list">
+                            <li><img class="langue-flag" src="Images/flags/france.svg" alt=""> Français <span class="about-meta">Langue maternelle</span></li>
+                            <li><img class="langue-flag" src="Images/flags/uk.svg" alt=""> Anglais <span class="about-meta">B1-B2</span></li>
+                            <li><img class="langue-flag" src="Images/flags/allemagne.svg" alt=""> Allemand <span class="about-meta">A2</span></li>
+                        </ul>
                     </div>
-                    <pre class="console-code"><code><span class="code-keyword">const</span> <span class="code-var">developer</span> <span class="code-operator">=</span> <span class="code-brace">{</span>
-  <span class="code-prop">name</span>: <span class="code-string">'Trystan Roussel'</span>,
-  <span class="code-prop">focus</span>: <span class="code-string">'Développement Web &amp; UI/UX'</span>,
-  <span class="code-prop">skills</span>: <span class="code-brace">[</span><span class="code-string">'HTML'</span>, <span class="code-string">'CSS'</span>, <span class="code-string">'JS'</span>, <span class="code-string">'React'</span>, <span class="code-string">'Figma'</span><span class="code-brace">]</span>,
-  <span class="code-prop">passionate</span>: <span class="code-keyword">true</span>,
-  <span class="code-prop">motto</span>: <span class="code-string">"Build with Purpose"</span>
-<span class="code-brace">}</span>;
-<span class="code-var">developer</span>.<span class="code-method">showcase</span><span class="code-brace">()</span>;</code></pre>
-                </div>
-
-                <div class="about-content">
-                    <h2 class="about-title">A propos de moi</h2>
-                    <p class="about-intro">
-                        Étudiant passionné par le développement web, le design UI/UX et la création de contenus numériques. Curieux et motivé, je suis à la recherche d'une alternance pour mettre en pratique mes compétences dans un environnement professionnel.
-                    </p>
-
-                    <div class="about-grid">
-                        <div class="about-block">
-                            <h3 class="about-block-title">Langues</h3>
-                            <ul class="about-list">
-                                <li><img class="langue-flag" src="Images/flags/france.svg" alt=""> Français <span class="about-meta">Langue maternelle</span></li>
-                                <li><img class="langue-flag" src="Images/flags/uk.svg" alt=""> Anglais <span class="about-meta">B1-B2</span></li>
-                                <li><img class="langue-flag" src="Images/flags/allemagne.svg" alt=""> Allemand <span class="about-meta">A2</span></li>
-                            </ul>
-                        </div>
-                        <div class="about-block">
-                            <h3 class="about-block-title">Soft-Skills</h3>
-                            <ul class="about-list about-list-plain">
-                                <li>Créatif</li>
-                                <li>Dépassement de soi</li>
-                                <li>Adaptabilité</li>
-                                <li>Travail en équipe</li>
-                            </ul>
-                        </div>
-                        <div class="about-block">
-                            <h3 class="about-block-title">Passions</h3>
-                            <ul class="about-list about-list-plain">
-                                <li><i class="fa-solid fa-dumbbell"></i> Sport</li>
-                                <li><i class="fa-solid fa-music"></i> Musique</li>
-                                <li><i class="fa-solid fa-lightbulb"></i> Création de contenus</li>
-                                <li><i class="fa-solid fa-code"></i> Développement Web</li>
-                            </ul>
-                        </div>
+                    <div class="about-block">
+                        <h3 class="about-block-title"><i class="fa-solid fa-heart"></i> Soft-Skills</h3>
+                        <ul class="about-list about-list-plain">
+                            <li><i class="fa-solid fa-palette"></i> Créatif</li>
+                            <li><i class="fa-solid fa-arrow-trend-up"></i> Dépassement de soi</li>
+                            <li><i class="fa-solid fa-arrows-spin"></i> Adaptabilité</li>
+                            <li><i class="fa-solid fa-people-group"></i> Travail en équipe</li>
+                        </ul>
+                    </div>
+                    <div class="about-block">
+                        <h3 class="about-block-title"><i class="fa-solid fa-star"></i> Passions</h3>
+                        <ul class="about-list about-list-plain">
+                            <li><i class="fa-solid fa-dumbbell"></i> Sport</li>
+                            <li><i class="fa-solid fa-music"></i> Musique</li>
+                            <li><i class="fa-solid fa-lightbulb"></i> Création de contenus</li>
+                            <li><i class="fa-solid fa-code"></i> Développement Web</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills">
+        <section id="skills" class="skills-section">
+            <div class="skills-competences">
+                <h2 class="skills-title">Mes compétences</h2>
+                <div class="competences-grid">
+                    <div class="competence-card">
+                        <div class="competence-icon"><i class="fa-solid fa-code"></i></div>
+                        <span class="competence-label">Frontend Developer</span>
+                    </div>
+                    <div class="competence-card">
+                        <div class="competence-icon"><i class="fa-solid fa-server"></i></div>
+                        <span class="competence-label">Backend Developer</span>
+                    </div>
+                    <div class="competence-card">
+                        <div class="competence-icon"><i class="fa-solid fa-palette"></i></div>
+                        <span class="competence-label">UI/UX Design</span>
+                    </div>
+                    <div class="competence-card">
+                        <div class="competence-icon"><i class="fa-solid fa-film"></i></div>
+                        <span class="competence-label">Création de contenus</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-bounce-wrap">
+                <h2 class="skills-title">Mes skills</h2>
+                <p class="skills-subtitle">Passe la souris pour les repousser, ils rebondissent sur les bords.</p>
+                <div id="skills-arena" class="skills-arena">
+                    <div class="skill-bubble" data-dx="0" data-dy="0"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
+                    <div class="skill-bubble" data-dx="0" data-dy="0"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
+                    <div class="skill-bubble" data-dx="0" data-dy="0"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                    <div class="skill-bubble" data-dx="0" data-dy="0"><i class="fa-brands fa-php"></i><span>PHP</span></div>
+                    <div class="skill-bubble" data-dx="0" data-dy="0"><i class="fa-solid fa-database"></i><span>MySQL</span></div>
+                    <div class="skill-bubble" data-dx="0" data-dy="0"><i class="fa-brands fa-wordpress"></i><span>WordPress</span></div>
+                    <div class="skill-bubble" data-dx="0" data-dy="0"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                    <div class="skill-bubble" data-dx="0" data-dy="0"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
+                    <div class="skill-bubble" data-dx="0" data-dy="0"><i class="fa-solid fa-image"></i><span>Photoshop</span></div>
+                    <div class="skill-bubble" data-dx="0" data-dy="0"><i class="fa-solid fa-paintbrush"></i><span>Illustrator</span></div>
+                    <div class="skill-bubble" data-dx="0" data-dy="0"><i class="fa-solid fa-video"></i><span>Premiere Pro</span></div>
+                    <div class="skill-bubble" data-dx="0" data-dy="0"><i class="fa-solid fa-wand-magic-sparkles"></i><span>After Effects</span></div>
+                </div>
+            </div>
         </section>
 
         <section id="projects" class="projects-section">
@@ -241,7 +258,7 @@
                 <a href="#" class="footer-social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copy">© 2024 — Construit avec du café et du code</p>
+                <p class="footer-copy">© 2026 — Construit avec du café et du code</p>
             </div>
         </div>
     </footer>
