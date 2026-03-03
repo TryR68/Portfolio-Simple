@@ -79,82 +79,56 @@
 
         <section id="about" class="about">
             <div class="about-inner">
-                <figure class="about-photo">
-                    <img src="Images/photo-profil.jpg" alt="Photo" width="400" height="500">
-                </figure>
+                <div class="about-console">
+                    <div class="console-titlebar">
+                        <div class="console-dots">
+                            <span class="dot dot-close"></span>
+                            <span class="dot dot-minimize"></span>
+                            <span class="dot dot-maximize"></span>
+                        </div>
+                        <span class="console-filename"><span class="console-dot"></span> Portfolio.ts</span>
+                    </div>
+                    <pre class="console-code"><code><span class="code-keyword">const</span> <span class="code-var">developer</span> <span class="code-operator">=</span> <span class="code-brace">{</span>
+  <span class="code-prop">name</span>: <span class="code-string">'Trystan Roussel'</span>,
+  <span class="code-prop">focus</span>: <span class="code-string">'Développement Web &amp; UI/UX'</span>,
+  <span class="code-prop">skills</span>: <span class="code-brace">[</span><span class="code-string">'HTML'</span>, <span class="code-string">'CSS'</span>, <span class="code-string">'JS'</span>, <span class="code-string">'React'</span>, <span class="code-string">'Figma'</span><span class="code-brace">]</span>,
+  <span class="code-prop">passionate</span>: <span class="code-keyword">true</span>,
+  <span class="code-prop">motto</span>: <span class="code-string">"Build with Purpose"</span>
+<span class="code-brace">}</span>;
+<span class="code-var">developer</span>.<span class="code-method">showcase</span><span class="code-brace">()</span>;</code></pre>
+                </div>
 
                 <div class="about-content">
                     <h2 class="about-title">A propos de moi</h2>
                     <p class="about-intro">
-                        Étudiant passionné par le développement web, le design UI/UX et la création de contenus numériques. Curieux et motivé, je suis actuellement à la recherche d'une alternance pour mettre en pratique mes compétences techniques et créatives dans un environnement professionnel.
+                        Étudiant passionné par le développement web, le design UI/UX et la création de contenus numériques. Curieux et motivé, je suis à la recherche d'une alternance pour mettre en pratique mes compétences dans un environnement professionnel.
                     </p>
 
-                    <div class="about-tabs">
-                        <button type="button" class="about-tab active" id="tab-langues" data-tab="langues">Langues</button>
-                        <button type="button" class="about-tab" id="tab-softskills" data-tab="softskills">Soft-Skills</button>
-                        <button type="button" class="about-tab" id="tab-passions" data-tab="passions">Passions</button>
-                    </div>
-
-                    <div class="about-panels">
-                        <div class="about-panel active" id="panel-langues">
-                            <ul class="langues-list">
-                                <li class="langue-item">
-                                    <img class="langue-flag" src="Images/flags/france.svg" alt="" width="48" height="48">
-                                    <span class="langue-name">Français</span>
-                                    <span class="langue-level">Langue maternelle</span>
-                                </li>
-                                <li class="langue-item">
-                                    <img class="langue-flag" src="Images/flags/uk.svg" alt="" width="48" height="48">
-                                    <span class="langue-name">Anglais</span>
-                                    <span class="langue-level">Niveau B1-B2</span>
-                                </li>
-                                <li class="langue-item">
-                                    <img class="langue-flag" src="Images/flags/allemagne.svg" alt="" width="48" height="48">
-                                    <span class="langue-name">Allemand</span>
-                                    <span class="langue-level">Niveau A2</span>
-                                </li>
+                    <div class="about-grid">
+                        <div class="about-block">
+                            <h3 class="about-block-title">Langues</h3>
+                            <ul class="about-list">
+                                <li><img class="langue-flag" src="Images/flags/france.svg" alt=""> Français <span class="about-meta">Langue maternelle</span></li>
+                                <li><img class="langue-flag" src="Images/flags/uk.svg" alt=""> Anglais <span class="about-meta">B1-B2</span></li>
+                                <li><img class="langue-flag" src="Images/flags/allemagne.svg" alt=""> Allemand <span class="about-meta">A2</span></li>
                             </ul>
                         </div>
-
-                        <div class="about-panel" id="panel-softskills" hidden>
-                            <ul class="softskills-list">
-                                <li class="softskill-item">
-                                    <h3 class="softskill-title">Créatif</h3>
-                                    <p class="softskill-desc">J'apporte des solutions innovantes et créatives pour enrichir les projets et stimuler la réflexion.</p>
-                                </li>
-                                <li class="softskill-item">
-                                    <h3 class="softskill-title">Dépassement de soi</h3>
-                                    <p class="softskill-desc">Me pousse à relever des défis ambitieux et à progresser vers l'excellence.</p>
-                                </li>
-                                <li class="softskill-item">
-                                    <h3 class="softskill-title">Adaptabilité</h3>
-                                    <p class="softskill-desc">Me permet de m'adapter rapidement aux évolutions technologiques pour garantir une performance optimale.</p>
-                                </li>
-                                <li class="softskill-item">
-                                    <h3 class="softskill-title">Travail en équipe</h3>
-                                    <p class="softskill-desc">Permet de collaborer efficacement en favorisant l'écoute et la communication.</p>
-                                </li>
+                        <div class="about-block">
+                            <h3 class="about-block-title">Soft-Skills</h3>
+                            <ul class="about-list about-list-plain">
+                                <li>Créatif</li>
+                                <li>Dépassement de soi</li>
+                                <li>Adaptabilité</li>
+                                <li>Travail en équipe</li>
                             </ul>
                         </div>
-
-                        <div class="about-panel" id="panel-passions" hidden>
-                            <ul class="passions-list">
-                                <li class="passion-item">
-                                    <span class="passion-label">Sport</span>
-                                    <i class="fa-solid fa-dumbbell passion-icon"></i>
-                                </li>
-                                <li class="passion-item">
-                                    <span class="passion-label">Musique</span>
-                                    <i class="fa-solid fa-music passion-icon"></i>
-                                </li>
-                                <li class="passion-item">
-                                    <span class="passion-label">Création de contenus</span>
-                                    <i class="fa-solid fa-lightbulb passion-icon"></i>
-                                </li>
-                                <li class="passion-item">
-                                    <span class="passion-label">Développement Web</span>
-                                    <i class="fa-solid fa-code passion-icon"></i>
-                                </li>
+                        <div class="about-block">
+                            <h3 class="about-block-title">Passions</h3>
+                            <ul class="about-list about-list-plain">
+                                <li><i class="fa-solid fa-dumbbell"></i> Sport</li>
+                                <li><i class="fa-solid fa-music"></i> Musique</li>
+                                <li><i class="fa-solid fa-lightbulb"></i> Création de contenus</li>
+                                <li><i class="fa-solid fa-code"></i> Développement Web</li>
                             </ul>
                         </div>
                     </div>
@@ -249,11 +223,25 @@
         <section id="contact">
         </section>
     </main>
-    <footer>
+    <footer class="footer">
+        <div class="footer-gradient"></div>
         <div class="footer-content">
-            <div class="footer-left">
-                <p>Trystan Roussel</p>
-                <p>Développeur Web</p>
+            <div class="footer-brand">
+                <span class="footer-name">Trystan Roussel</span>
+                <span class="footer-role">Développeur Web</span>
+            </div>
+            <nav class="footer-nav">
+                <a href="#about">À propos</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projets</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="#" class="footer-social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="footer-social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2024 — Construit avec du café et du code</p>
             </div>
         </div>
     </footer>

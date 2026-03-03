@@ -53,25 +53,6 @@
     link.addEventListener('click', closeDrawer);
   });
 
-  /* À propos : onglets Langues / Soft-Skills / Passions */
-  (function initAboutTabs() {
-    var tabBtns = document.querySelectorAll('.about-tab');
-    var panels = document.querySelectorAll('.about-panel');
-
-    tabBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var tabName = btn.getAttribute('data-tab');
-        tabBtns.forEach(function (b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        panels.forEach(function (panel) {
-          var isTarget = panel.id === 'panel-' + tabName;
-          panel.classList.toggle('active', isTarget);
-          panel.hidden = !isTarget;
-        });
-      });
-    });
-  })();
-
   /* Explorateur Projets : dossiers pliables + filtre par type + affichage détail */
   (function initExplorer() {
     var folderBtns = document.querySelectorAll('.explorer-folder-btn');
