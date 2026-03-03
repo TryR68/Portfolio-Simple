@@ -62,3 +62,26 @@
   padding: 1.1rem 1.75rem;
   font-size: 1rem;
 }
+
+/* Sections : plus de marge et respiration */
+#home {
+  padding: 2rem 40px 4rem;
+}
+
+.home-content h1 {
+  letter-spacing: 0.2em;
+}
+
+.about {
+  padding: 3rem 40px 4rem;
+}
+
+#skills,
+#projects,
+#contact {
+  padding: 3rem 40px;
+}
+
+footer {
+  padding: 1.5rem 40px;
+}

@@ -87,3 +87,60 @@
 .header-cv:hover {
   filter: brightness(1.1);
 }
+
+/* ---------- Sections (ordinateur) ---------- */
+#home {
+  padding: 2rem 50px 4rem;
+}
+
+.home-content h1 {
+  letter-spacing: 0.2em;
+}
+
+.about {
+  padding: 4rem 50px 5rem;
+}
+
+.about-inner {
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
+  max-width: 1100px;
+}
+
+.about-photo {
+  flex-shrink: 0;
+  width: 320px;
+}
+
+.about-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-title {
+  font-size: 2rem;
+}
+
+.about-tabs {
+  gap: 0.75rem;
+}
+
+.about-tab {
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+}
+
+#skills,
+#projects,
+#contact {
+  padding: 4rem 50px;
+}
+
+footer {
+  padding: 2rem 50px;
+}
+
+.footer-content {
+  max-width: 1100px;
+}
