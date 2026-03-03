@@ -62,16 +62,16 @@
         <section id="home">
             <div class="home-content">
                 <p class="home-intro">Bonjour, je suis Trystan</p>
-                <h1 class="home-title" aria-label="Développeur Web"><span class="home-title-text" id="typing-title"></span><span class="typing-cursor" aria-hidden="true">|</span></h1>
+                <h1 class="home-title"><span class="home-title-text" id="typing-title"></span><span class="typing-cursor">|</span></h1>
                 <p class="home-tags"><span>CRÉATIF.</span> PASSIONNÉ. CURIEUX.</p>
                 <p class="home-status">ÉTUDIANT EN BUT MMI</p>
                 <div class="container-location">
-                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    <i class="fa-solid fa-location-dot"></i>
                     <span>Mulhouse</span>
                 </div>
             </div>
 
-            <a href="#about" class="bouton-fleche" aria-label="Voir la suite du portfolio">
+            <a href="#about" class="bouton-fleche">
                 <i class="fa-solid fa-chevron-down"></i>
             </a>
         </section>
@@ -89,14 +89,14 @@
                         Étudiant passionné par le développement web, le design UI/UX et la création de contenus numériques. Curieux et motivé, je suis actuellement à la recherche d'une alternance pour mettre en pratique mes compétences techniques et créatives dans un environnement professionnel.
                     </p>
 
-                    <div class="about-tabs" role="tablist" aria-label="Informations à propos de moi">
-                        <button type="button" class="about-tab active" role="tab" aria-selected="true" aria-controls="panel-langues" id="tab-langues" data-tab="langues">Langues</button>
-                        <button type="button" class="about-tab" role="tab" aria-selected="false" aria-controls="panel-softskills" id="tab-softskills" data-tab="softskills">Soft-Skills</button>
-                        <button type="button" class="about-tab" role="tab" aria-selected="false" aria-controls="panel-passions" id="tab-passions" data-tab="passions">Passions</button>
+                    <div class="about-tabs">
+                        <button type="button" class="about-tab active" id="tab-langues" data-tab="langues">Langues</button>
+                        <button type="button" class="about-tab" id="tab-softskills" data-tab="softskills">Soft-Skills</button>
+                        <button type="button" class="about-tab" id="tab-passions" data-tab="passions">Passions</button>
                     </div>
 
                     <div class="about-panels">
-                        <div class="about-panel active" id="panel-langues" role="tabpanel" aria-labelledby="tab-langues">
+                        <div class="about-panel active" id="panel-langues">
                             <ul class="langues-list">
                                 <li class="langue-item">
                                     <img class="langue-flag" src="Images/flags/france.svg" alt="" width="48" height="48">
@@ -116,7 +116,7 @@
                             </ul>
                         </div>
 
-                        <div class="about-panel" id="panel-softskills" role="tabpanel" aria-labelledby="tab-softskills" hidden>
+                        <div class="about-panel" id="panel-softskills" hidden>
                             <ul class="softskills-list">
                                 <li class="softskill-item">
                                     <h3 class="softskill-title">Créatif</h3>
@@ -137,23 +137,23 @@
                             </ul>
                         </div>
 
-                        <div class="about-panel" id="panel-passions" role="tabpanel" aria-labelledby="tab-passions" hidden>
+                        <div class="about-panel" id="panel-passions" hidden>
                             <ul class="passions-list">
                                 <li class="passion-item">
                                     <span class="passion-label">Sport</span>
-                                    <i class="fa-solid fa-dumbbell passion-icon" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-dumbbell passion-icon"></i>
                                 </li>
                                 <li class="passion-item">
                                     <span class="passion-label">Musique</span>
-                                    <i class="fa-solid fa-music passion-icon" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-music passion-icon"></i>
                                 </li>
                                 <li class="passion-item">
                                     <span class="passion-label">Création de contenus</span>
-                                    <i class="fa-solid fa-lightbulb passion-icon" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-lightbulb passion-icon"></i>
                                 </li>
                                 <li class="passion-item">
                                     <span class="passion-label">Développement Web</span>
-                                    <i class="fa-solid fa-code passion-icon" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-code passion-icon"></i>
                                 </li>
                             </ul>
                         </div>
@@ -165,7 +165,75 @@
         <section id="skills">
         </section>
 
-        <section id="projects">
+        <section id="projects" class="projects-section">
+            <div class="explorer-window">
+                <div class="explorer-titlebar">
+                    <div class="explorer-dots">
+                        <span class="dot dot-close"></span>
+                        <span class="dot dot-minimize"></span>
+                        <span class="dot dot-maximize"></span>
+                    </div>
+                    <span class="explorer-title">Projets — portfolio</span>
+                </div>
+                <div class="explorer-pathbar">
+                    <i class="fa-solid fa-folder"></i>
+                    <span class="explorer-path">Portfolio / Projets</span>
+                </div>
+                <div class="explorer-body">
+                    <aside class="explorer-sidebar">
+                        <div class="explorer-tree">
+                            <div class="explorer-folder is-open">
+                                <button type="button" class="explorer-folder-btn">
+                                    <i class="fa-solid fa-chevron-right explorer-folder-icon"></i>
+                                    <i class="fa-regular fa-folder explorer-folder-icon-folder"></i>
+                                    <span>2024</span>
+                                </button>
+                                <div class="explorer-folder-children">
+                                    <button type="button" class="explorer-file is-active" data-project="1">
+                                        <i class="fa-regular fa-file-code"></i>
+                                        <span>site-vitrine.html</span>
+                                    </button>
+                                    <button type="button" class="explorer-file" data-project="2">
+                                        <i class="fa-regular fa-file-code"></i>
+                                        <span>app-react.jsx</span>
+                                    </button>
+                                    <button type="button" class="explorer-file" data-project="3">
+                                        <i class="fa-regular fa-file-code"></i>
+                                        <span>portfolio-mmi.css</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="explorer-folder">
+                                <button type="button" class="explorer-folder-btn">
+                                    <i class="fa-solid fa-chevron-right explorer-folder-icon"></i>
+                                    <i class="fa-regular fa-folder explorer-folder-icon-folder"></i>
+                                    <span>2023</span>
+                                </button>
+                                <div class="explorer-folder-children">
+                                    <button type="button" class="explorer-file" data-project="4">
+                                        <i class="fa-regular fa-file-code"></i>
+                                        <span>projet-école.pdf</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="explorer-preview">
+                        <div class="explorer-preview-placeholder" id="explorer-placeholder">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <p>Sélectionnez un projet dans l’arborescence</p>
+                        </div>
+                        <div class="explorer-preview-content hidden" id="explorer-content">
+                            <div class="explorer-preview-header">
+                                <h3 class="explorer-preview-title" id="explorer-preview-title">—</h3>
+                                <div class="explorer-preview-meta" id="explorer-preview-meta">—</div>
+                            </div>
+                            <p class="explorer-preview-desc" id="explorer-preview-desc"></p>
+                            <a href="#" class="explorer-preview-link" id="explorer-preview-link" target="_blank" rel="noopener">Voir le projet <i class="fa-solid fa-external-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="contact">
