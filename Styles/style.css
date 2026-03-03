@@ -553,18 +553,27 @@ main {
 
 /* ---------- Section Projets (style explorateur de fichiers) ---------- */
 .projects-section {
-  padding: 3rem 20px 4rem;
+  padding: 1.5rem 1.5%;
   border-top: 1px solid rgba(221, 161, 94, 0.2);
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .explorer-window {
-  max-width: 900px;
+  width: 97%;
+  max-width: none;
   margin: 0 auto;
+  flex: 1;
+  min-height: calc(100vh - var(--header-height) - 3rem);
   background: #161616;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(221, 161, 94, 0.25);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
 }
 
 .explorer-titlebar {
@@ -600,12 +609,13 @@ main {
 .explorer-pathbar {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   padding: 8px 16px;
   background: #141414;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   font-size: 0.8rem;
   color: var(--accent-color);
+  flex-wrap: wrap;
 }
 
 .explorer-pathbar i {
@@ -613,9 +623,38 @@ main {
   opacity: 0.9;
 }
 
+.explorer-filter-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.explorer-filter-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+}
+
+.explorer-filter-select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(221, 161, 94, 0.4);
+  background: #1c1c1c;
+  color: var(--text-color);
+  font-size: 0.85rem;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.explorer-filter-select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
 .explorer-body {
   display: flex;
-  min-height: 320px;
+  flex: 1;
+  min-height: 280px;
 }
 
 .explorer-sidebar {
@@ -700,6 +739,10 @@ main {
 .explorer-file.is-active {
   background: rgba(221, 161, 94, 0.15);
   color: var(--accent-color);
+}
+
+.explorer-file.hidden {
+  display: none;
 }
 
 .explorer-file i {

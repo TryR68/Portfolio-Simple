@@ -178,6 +178,16 @@
                 <div class="explorer-pathbar">
                     <i class="fa-solid fa-folder"></i>
                     <span class="explorer-path">Portfolio / Projets</span>
+                    <label class="explorer-filter-wrap">
+                        <span class="explorer-filter-label">Type :</span>
+                        <select id="explorer-filter-type" class="explorer-filter-select">
+                            <option value="">Tous</option>
+                            <option value="developpement-web">Développement web</option>
+                            <option value="webdesign">Webdesign</option>
+                            <option value="design">Design</option>
+                            <option value="communication">Communication</option>
+                        </select>
+                    </label>
                 </div>
                 <div class="explorer-body">
                     <aside class="explorer-sidebar">
@@ -189,15 +199,15 @@
                                     <span>2024</span>
                                 </button>
                                 <div class="explorer-folder-children">
-                                    <button type="button" class="explorer-file is-active" data-project="1">
+                                    <button type="button" class="explorer-file is-active" data-project="1" data-type="developpement-web">
                                         <i class="fa-regular fa-file-code"></i>
                                         <span>site-vitrine.html</span>
                                     </button>
-                                    <button type="button" class="explorer-file" data-project="2">
+                                    <button type="button" class="explorer-file" data-project="2" data-type="developpement-web">
                                         <i class="fa-regular fa-file-code"></i>
                                         <span>app-react.jsx</span>
                                     </button>
-                                    <button type="button" class="explorer-file" data-project="3">
+                                    <button type="button" class="explorer-file" data-project="3" data-type="webdesign">
                                         <i class="fa-regular fa-file-code"></i>
                                         <span>portfolio-mmi.css</span>
                                     </button>
@@ -210,7 +220,7 @@
                                     <span>2023</span>
                                 </button>
                                 <div class="explorer-folder-children">
-                                    <button type="button" class="explorer-file" data-project="4">
+                                    <button type="button" class="explorer-file" data-project="4" data-type="design">
                                         <i class="fa-regular fa-file-code"></i>
                                         <span>projet-école.pdf</span>
                                     </button>

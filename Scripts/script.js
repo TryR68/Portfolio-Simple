@@ -53,10 +53,30 @@
     link.addEventListener('click', closeDrawer);
   });
 
-  /* Explorateur Projets : dossiers pliables + affichage détail */
+  /* À propos : onglets Langues / Soft-Skills / Passions */
+  (function initAboutTabs() {
+    var tabBtns = document.querySelectorAll('.about-tab');
+    var panels = document.querySelectorAll('.about-panel');
+
+    tabBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var tabName = btn.getAttribute('data-tab');
+        tabBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        panels.forEach(function (panel) {
+          var isTarget = panel.id === 'panel-' + tabName;
+          panel.classList.toggle('active', isTarget);
+          panel.hidden = !isTarget;
+        });
+      });
+    });
+  })();
+
+  /* Explorateur Projets : dossiers pliables + filtre par type + affichage détail */
   (function initExplorer() {
     var folderBtns = document.querySelectorAll('.explorer-folder-btn');
     var fileBtns = document.querySelectorAll('.explorer-file');
+    var filterSelect = document.getElementById('explorer-filter-type');
     var placeholder = document.getElementById('explorer-placeholder');
     var content = document.getElementById('explorer-content');
     var titleEl = document.getElementById('explorer-preview-title');
@@ -65,10 +85,10 @@
     var linkEl = document.getElementById('explorer-preview-link');
 
     var projects = {
-      1: { title: 'Site vitrine', meta: 'HTML / CSS / JS', desc: 'Site vitrine responsive pour un client ou projet personnel.', url: '#' },
-      2: { title: 'App React', meta: 'React / JSX', desc: 'Application web moderne avec React.', url: '#' },
-      3: { title: 'Portfolio MMI', meta: 'CSS / Intégration', desc: 'Maquette et intégration d’un portfolio étudiant.', url: '#' },
-      4: { title: 'Projet école', meta: 'PDF / Design', desc: 'Rendu de projet en design ou communication.', url: '#' }
+      1: { title: 'Site vitrine', meta: 'HTML / CSS / JS', desc: 'Site vitrine responsive pour un client ou projet personnel.', url: '#', type: 'developpement-web' },
+      2: { title: 'App React', meta: 'React / JSX', desc: 'Application web moderne avec React.', url: '#', type: 'developpement-web' },
+      3: { title: 'Portfolio MMI', meta: 'CSS / Intégration', desc: 'Maquette et intégration d’un portfolio étudiant.', url: '#', type: 'webdesign' },
+      4: { title: 'Projet école', meta: 'PDF / Design', desc: 'Rendu de projet en design ou communication.', url: '#', type: 'design' }
     };
 
     folderBtns.forEach(function (btn) {
@@ -77,6 +97,27 @@
         folder.classList.toggle('is-open');
       });
     });
+
+    function applyFilter() {
+      var type = filterSelect ? filterSelect.value : '';
+      fileBtns.forEach(function (btn) {
+        var projectType = btn.getAttribute('data-type');
+        var match = !type || projectType === type;
+        btn.classList.toggle('hidden', !match);
+      });
+      var visibleFiles = document.querySelectorAll('.explorer-file:not(.hidden)');
+      var activeFile = document.querySelector('.explorer-file.is-active');
+      if (activeFile && activeFile.classList.contains('hidden') && visibleFiles.length) {
+        visibleFiles[0].click();
+      } else if (visibleFiles.length === 0 && content && placeholder) {
+        content.classList.add('hidden');
+        placeholder.classList.remove('hidden');
+      }
+    }
+
+    if (filterSelect) {
+      filterSelect.addEventListener('change', applyFilter);
+    }
 
     function showProject(id) {
       var p = projects[id];
