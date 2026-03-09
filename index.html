@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- IL FAUDRAIT AUSSI AJOUTER DU PARALAX + CANVA DE FOND + SCROLL DOWN EFFECT  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trystan Roussel | Développeur Web</title>
@@ -12,6 +11,9 @@
     <link rel="icon" href="Images/svg/logo.svg">
 </head>
 <body>
+    <div id="canvas-background-wrap" aria-hidden="true">
+        <canvas id="canvas-background"></canvas>
+    </div>
     <div class="overlay2"></div>
     <header class="header">
         <div class="header-left">
@@ -291,5 +293,6 @@
 
 
 </body>
+<script src="Scripts/canvas-background.js"></script>
 <script src="Scripts/script.js"></script>
 </html>
