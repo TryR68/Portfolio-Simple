@@ -113,10 +113,17 @@
   gap: 1.25rem;
 }
 
-#skills,
-#projects,
-#contact {
+#skills {
   padding: 4rem 50px;
+}
+
+#projects {
+  padding: 4rem 50px 6rem;
+  margin-bottom: 2rem;
+}
+
+#contact {
+  padding: 6rem 50px 7rem;
 }
 
 .skills-section {

@@ -465,7 +465,6 @@ main {
 /* ---------- Section Skills ---------- */
 .skills-section {
   padding: 3rem 20px 4rem;
-  border-top: 1px solid rgba(196, 165, 116, 0.2);
 }
 
 .skills-title {
@@ -593,16 +592,86 @@ main {
   }
 }
 
-#contact {
-  min-height: 50vh;
-  padding: 3rem 20px;
-  border-top: 1px solid rgba(196, 165, 116, 0.2);
+/* ---------- Section Contact (sombre, même esprit que le reste) ---------- */
+.contact-section {
+  min-height: 40vh;
+  padding: 6rem 20px 7rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(196, 165, 116, 0.06) 0%, var(--background-color) 15%, var(--background-color) 85%, rgba(196, 165, 116, 0.06) 100%);
+  color: var(--text-color);
+  box-shadow: inset 0 1px 0 rgba(196, 165, 116, 0.12), inset 0 -1px 0 rgba(196, 165, 116, 0.12);
+}
+
+.contact-inner {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.contact-intro {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.contact-intro strong {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.contact-cta {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  background: transparent;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-cta:hover {
+  background: var(--accent-color);
+  color: #1c1c1c;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.contact-links a:hover {
+  color: var(--accent-color);
+}
+
+.contact-links i {
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
 /* ---------- Section Projets (style explorateur de fichiers) ---------- */
 .projects-section {
-  padding: 1.5rem 1.5%;
-  border-top: 1px solid rgba(196, 165, 116, 0.2);
+  padding: 1.5rem 1.5% 5rem;
+  margin-bottom: 2rem;
   min-height: calc(100vh - var(--header-height));
   display: flex;
   flex-direction: column;
@@ -894,14 +963,14 @@ main {
 /* ---------- Footer ---------- */
 .footer {
   position: relative;
-  margin-top: 4rem;
+  margin-top: 0;
   overflow: hidden;
 }
 
 .footer-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(196, 165, 116, 0.06) 30%, rgba(196, 165, 116, 0.12) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(196, 165, 116, 0.04) 50%, rgba(196, 165, 116, 0.08) 100%);
   pointer-events: none;
 }
 
@@ -981,7 +1050,6 @@ main {
 
 .footer-bottom {
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
   width: 100%;
   max-width: 400px;
 }

@@ -76,10 +76,17 @@
   padding: 3rem 40px 4rem;
 }
 
-#skills,
-#projects,
-#contact {
+#skills {
   padding: 3rem 40px;
+}
+
+#projects {
+  padding: 3rem 40px 5rem;
+  margin-bottom: 2rem;
+}
+
+#contact {
+  padding: 5rem 40px 6rem;
 }
 
 footer {
