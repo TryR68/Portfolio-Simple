@@ -132,45 +132,38 @@
         title: 'Carte de vœux — Préfecture de Colmar',
         meta: 'Design / Communication',
         desc: 'Création de la carte de vœux pour la préfecture de Colmar, adoptée officiellement.',
-        images: [],
-        siteUrl: '#',
-        githubUrl: '#',
+        images: ['Images/projects/Carte_de_voeux.png'],
         type: 'design'
       },
       4: {
         title: 'Maquette site Resort',
         meta: 'Webdesign / Figma',
         desc: 'Maquette d\'un site web pour un resort : structure, pages et design d\'interface.',
-        images: [],
-        siteUrl: '#',
-        githubUrl: '#',
+        images: ['Images/projects/resort-bay1.png', 'Images/projects/resort-bay2.png'],
         type: 'webdesign'
       },
       5: {
         title: 'Newsletter JBL',
         meta: 'Design / Newsletter',
         desc: 'Design d\'une newsletter pour la marque JBL : mise en page, visuels et contenu éditorial.',
-        images: [],
-        siteUrl: '#',
-        githubUrl: '#',
+        images: ['Images/projects/newsletter-jbl1.png', 'Images/projects/newsletter-jbl2.png'],
         type: 'design'
       },
       6: {
         title: 'Système de réservation de livres',
         meta: 'HTML / CSS / PHP / SQL',
         desc: 'Site dynamique avec base de données sur le sujet de mon choix : système de réservation de livres pour gérer les emprunts et le catalogue.',
-        images: [],
-        siteUrl: '#',
-        githubUrl: '#',
+        images: ['Images/projects/SAE202-1.png', 'Images/projects/SAE202-2.png', 'Images/projects/SAE202-3.png'],
+        githubUrl: 'https://github.com/TryR68/SAE203',
         type: 'developpement-web'
       },
       7: {
         title: 'Portfolio (ancienne version)',
         meta: 'HTML / CSS / JavaScript',
         desc: 'Mon premier portfolio, réalisé en 2024.',
-        images: [],
-        siteUrl: '#',
-        githubUrl: '#',
+        images: ['Images/projects/portfolio1.png', 'Images/projects/portfolio2.png', 'Images/projects/portfolio3.png'],
+        siteUrl: 'https://tryr68.github.io/Portfolio_Trystan/',
+        githubUrl: 'https://github.com/TryR68/Portfolio_Trystan',
         type: 'developpement-web'
       }
     };
