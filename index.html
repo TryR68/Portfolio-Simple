@@ -193,6 +193,11 @@
                         </select>
                     </label>
                 </div>
+
+
+
+
+
                 <div class="explorer-body">
                     <aside class="explorer-sidebar">
                         <div class="explorer-tree">
@@ -200,20 +205,16 @@
                                 <button type="button" class="explorer-folder-btn">
                                     <i class="fa-solid fa-chevron-right explorer-folder-icon"></i>
                                     <i class="fa-regular fa-folder explorer-folder-icon-folder"></i>
-                                    <span>2024</span>
+                                    <span>2026</span>
                                 </button>
                                 <div class="explorer-folder-children">
                                     <button type="button" class="explorer-file is-active" data-project="1" data-type="developpement-web">
                                         <i class="fa-regular fa-file-code"></i>
-                                        <span>site-vitrine.html</span>
+                                        <span>datavisualisation.html</span>
                                     </button>
                                     <button type="button" class="explorer-file" data-project="2" data-type="developpement-web">
                                         <i class="fa-regular fa-file-code"></i>
-                                        <span>app-react.jsx</span>
-                                    </button>
-                                    <button type="button" class="explorer-file" data-project="3" data-type="webdesign">
-                                        <i class="fa-regular fa-file-code"></i>
-                                        <span>portfolio-mmi.css</span>
+                                        <span>ruches-connectees.php</span>
                                     </button>
                                 </div>
                             </div>
@@ -221,17 +222,50 @@
                                 <button type="button" class="explorer-folder-btn">
                                     <i class="fa-solid fa-chevron-right explorer-folder-icon"></i>
                                     <i class="fa-regular fa-folder explorer-folder-icon-folder"></i>
-                                    <span>2023</span>
+                                    <span>2025</span>
                                 </button>
                                 <div class="explorer-folder-children">
-                                    <button type="button" class="explorer-file" data-project="4" data-type="design">
+                                    <button type="button" class="explorer-file" data-project="3" data-type="design">
                                         <i class="fa-regular fa-file-code"></i>
-                                        <span>projet-école.pdf</span>
+                                        <span>carte-voeux-prefecture.html</span>
+                                    </button>
+                                    <button type="button" class="explorer-file" data-project="4" data-type="webdesign">
+                                        <i class="fa-regular fa-file-code"></i>
+                                        <span>maquette-resort.fig</span>
+                                    </button>
+                                    <button type="button" class="explorer-file" data-project="5" data-type="design">
+                                        <i class="fa-regular fa-file-code"></i>
+                                        <span>newsletter-jbl.html</span>
+                                    </button>
+                                    <button type="button" class="explorer-file" data-project="6" data-type="developpement-web">
+                                        <i class="fa-regular fa-file-code"></i>
+                                        <span>reservation-livres.php</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="explorer-folder">
+                                <button type="button" class="explorer-folder-btn">
+                                    <i class="fa-solid fa-chevron-right explorer-folder-icon"></i>
+                                    <i class="fa-regular fa-folder explorer-folder-icon-folder"></i>
+                                    <span>2024</span>
+                                </button>
+                                <div class="explorer-folder-children">
+                                    <button type="button" class="explorer-file" data-project="7" data-type="developpement-web">
+                                        <i class="fa-regular fa-file-code"></i>
+                                        <span>portfolio-v1.html</span>
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </aside>
+
+
+
+
+
+
+
+
                     <div class="explorer-preview">
                         <div class="explorer-preview-placeholder" id="explorer-placeholder">
                             <i class="fa-solid fa-arrow-left"></i>
@@ -242,8 +276,19 @@
                                 <h3 class="explorer-preview-title" id="explorer-preview-title">—</h3>
                                 <div class="explorer-preview-meta" id="explorer-preview-meta">—</div>
                             </div>
+                            <div class="explorer-preview-gallery" id="explorer-preview-gallery">
+                                <div class="explorer-gallery-main">
+                                    <button type="button" class="explorer-gallery-btn explorer-gallery-prev" id="explorer-gallery-prev" aria-label="Image précédente"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <img class="explorer-gallery-img" id="explorer-gallery-img" src="" alt="" />
+                                    <button type="button" class="explorer-gallery-btn explorer-gallery-next" id="explorer-gallery-next" aria-label="Image suivante"><i class="fa-solid fa-chevron-right"></i></button>
+                                </div>
+                                <div class="explorer-gallery-dots" id="explorer-gallery-dots"></div>
+                            </div>
                             <p class="explorer-preview-desc" id="explorer-preview-desc"></p>
-                            <a href="#" class="explorer-preview-link" id="explorer-preview-link" target="_blank" rel="noopener">Voir le projet <i class="fa-solid fa-external-link"></i></a>
+                            <div class="explorer-preview-links">
+                                <a href="#" class="explorer-preview-link explorer-preview-link-site" id="explorer-preview-link-site" target="_blank" rel="noopener">Voir le site <i class="fa-solid fa-external-link"></i></a>
+                                <a href="#" class="explorer-preview-link explorer-preview-link-github" id="explorer-preview-link-github" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+                            </div>
                         </div>
                     </div>
                 </div>

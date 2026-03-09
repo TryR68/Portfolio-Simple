@@ -96,16 +96,83 @@
     var filterSelect = document.getElementById('explorer-filter-type');
     var placeholder = document.getElementById('explorer-placeholder');
     var content = document.getElementById('explorer-content');
+    var galleryEl = document.getElementById('explorer-preview-gallery');
+    var galleryImgEl = document.getElementById('explorer-gallery-img');
+    var galleryDotsEl = document.getElementById('explorer-gallery-dots');
+    var galleryPrevBtn = document.getElementById('explorer-gallery-prev');
+    var galleryNextBtn = document.getElementById('explorer-gallery-next');
     var titleEl = document.getElementById('explorer-preview-title');
     var metaEl = document.getElementById('explorer-preview-meta');
     var descEl = document.getElementById('explorer-preview-desc');
-    var linkEl = document.getElementById('explorer-preview-link');
+    var linkSiteEl = document.getElementById('explorer-preview-link-site');
+    var linkGithubEl = document.getElementById('explorer-preview-link-github');
+
+    var currentGalleryIndex = 0;
+    var currentGalleryImages = [];
 
     var projects = {
-      1: { title: 'Site vitrine', meta: 'HTML / CSS / JS', desc: 'Site vitrine responsive pour un client ou projet personnel.', url: '#', type: 'developpement-web' },
-      2: { title: 'App React', meta: 'React / JSX', desc: 'Application web moderne avec React.', url: '#', type: 'developpement-web' },
-      3: { title: 'Portfolio MMI', meta: 'CSS / Intégration', desc: 'Maquette et intégration d’un portfolio étudiant.', url: '#', type: 'webdesign' },
-      4: { title: 'Projet école', meta: 'PDF / Design', desc: 'Rendu de projet en design ou communication.', url: '#', type: 'design' }
+      1: {
+        title: 'SAE Datavisualisation',
+        meta: 'HTML / CSS / JavaScript',
+        desc: 'Projet de datavisualisation (SAE 2026) : prise en main d\'un fichier JSON de mon choix et mise en valeur des données en animant des SVG via une interface web en HTML, CSS et JavaScript.',
+        images: ['Images/projects/datavisualisation1.png', 'Images/projects/datavisualisation2.png', ],
+        siteUrl: 'https://tryr68.github.io/SAE-303/',
+        githubUrl: 'https://github.com/TryR68/SAE-303',
+        type: 'developpement-web'
+      },
+      2: {
+        title: 'Ruches connectées',
+        meta: 'HTML / CSS / JavaScript / PHP / SQL (MVC)',
+        desc: 'Projet fictif full-stack pour des ruches connectées en groupe : application web en architecture MVC avec base de données, permettant aux apiculteurs de consulter et gérer les données de leurs ruches (température, humidité, etc.).',
+        images: ['Images/projects/ruche1.png', 'Images/projects/ruche2.png', 'Images/projects/ruche3.png', 'Images/projects/ruche4.png'],
+        githubUrl: 'https://github.com/TryR68/SiteRucheSAE',
+        type: 'developpement-web'
+      },
+      3: {
+        title: 'Carte de vœux — Préfecture de Colmar',
+        meta: 'Design / Communication',
+        desc: 'Création de la carte de vœux pour la préfecture de Colmar, adoptée officiellement.',
+        images: [],
+        siteUrl: '#',
+        githubUrl: '#',
+        type: 'design'
+      },
+      4: {
+        title: 'Maquette site Resort',
+        meta: 'Webdesign / Figma',
+        desc: 'Maquette d\'un site web pour un resort : structure, pages et design d\'interface.',
+        images: [],
+        siteUrl: '#',
+        githubUrl: '#',
+        type: 'webdesign'
+      },
+      5: {
+        title: 'Newsletter JBL',
+        meta: 'Design / Newsletter',
+        desc: 'Design d\'une newsletter pour la marque JBL : mise en page, visuels et contenu éditorial.',
+        images: [],
+        siteUrl: '#',
+        githubUrl: '#',
+        type: 'design'
+      },
+      6: {
+        title: 'Système de réservation de livres',
+        meta: 'HTML / CSS / PHP / SQL',
+        desc: 'Site dynamique avec base de données sur le sujet de mon choix : système de réservation de livres pour gérer les emprunts et le catalogue.',
+        images: [],
+        siteUrl: '#',
+        githubUrl: '#',
+        type: 'developpement-web'
+      },
+      7: {
+        title: 'Portfolio (ancienne version)',
+        meta: 'HTML / CSS / JavaScript',
+        desc: 'Mon premier portfolio, réalisé en 2024.',
+        images: [],
+        siteUrl: '#',
+        githubUrl: '#',
+        type: 'developpement-web'
+      }
     };
 
     folderBtns.forEach(function (btn) {
@@ -136,6 +203,31 @@
       filterSelect.addEventListener('change', applyFilter);
     }
 
+    function getProjectImages(p) {
+      if (p.images && p.images.length) return p.images;
+      if (p.image) return [p.image];
+      return [];
+    }
+
+    function setGalleryImage(index) {
+      currentGalleryIndex = index;
+      if (!galleryImgEl) return;
+      if (!currentGalleryImages.length) {
+        galleryImgEl.style.display = 'none';
+        return;
+      }
+      galleryImgEl.src = currentGalleryImages[index];
+      galleryImgEl.alt = 'Capture ' + (index + 1) + ' — ' + (titleEl ? titleEl.textContent : '');
+      galleryImgEl.onerror = function () { galleryImgEl.style.display = 'none'; };
+      galleryImgEl.style.display = '';
+      if (galleryDotsEl) {
+        var dots = galleryDotsEl.querySelectorAll('.explorer-gallery-dot');
+        dots.forEach(function (d, i) { d.classList.toggle('is-active', i === index); });
+      }
+      if (galleryPrevBtn) galleryPrevBtn.style.visibility = currentGalleryImages.length > 1 ? 'visible' : 'hidden';
+      if (galleryNextBtn) galleryNextBtn.style.visibility = currentGalleryImages.length > 1 ? 'visible' : 'hidden';
+    }
+
     function showProject(id) {
       var p = projects[id];
       if (!p) return;
@@ -144,7 +236,44 @@
       if (titleEl) titleEl.textContent = p.title;
       if (metaEl) metaEl.textContent = p.meta;
       if (descEl) descEl.textContent = p.desc;
-      if (linkEl) linkEl.href = p.url;
+      if (linkSiteEl) {
+        linkSiteEl.href = p.siteUrl || '#';
+        linkSiteEl.style.display = p.siteUrl ? '' : 'none';
+      }
+      if (linkGithubEl) {
+        linkGithubEl.href = p.githubUrl || '#';
+        linkGithubEl.style.display = p.githubUrl ? '' : 'none';
+      }
+
+      currentGalleryImages = getProjectImages(p);
+      if (galleryEl) galleryEl.style.display = currentGalleryImages.length ? '' : 'none';
+      if (galleryDotsEl) {
+        galleryDotsEl.innerHTML = '';
+        currentGalleryImages.forEach(function (_, i) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'explorer-gallery-dot' + (i === 0 ? ' is-active' : '');
+          dot.setAttribute('aria-label', 'Image ' + (i + 1));
+          dot.addEventListener('click', function () { setGalleryImage(i); });
+          galleryDotsEl.appendChild(dot);
+        });
+      }
+      setGalleryImage(0);
+    }
+
+    if (galleryPrevBtn) {
+      galleryPrevBtn.addEventListener('click', function () {
+        if (currentGalleryImages.length < 2) return;
+        var prev = (currentGalleryIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+        setGalleryImage(prev);
+      });
+    }
+    if (galleryNextBtn) {
+      galleryNextBtn.addEventListener('click', function () {
+        if (currentGalleryImages.length < 2) return;
+        var next = (currentGalleryIndex + 1) % currentGalleryImages.length;
+        setGalleryImage(next);
+      });
     }
 
     fileBtns.forEach(function (btn) {
