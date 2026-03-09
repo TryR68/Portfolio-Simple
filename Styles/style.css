@@ -14,10 +14,63 @@ html {
   --background-color: #1c1c1c;
   --text-color: #e8e4df;
   --text-muted: #b8b4ae;
-  --accent-color: #c4a574;
-  --beige-light: rgba(196, 165, 116, 0.12);
-  --beige-border: rgba(196, 165, 116, 0.25);
+  --accent-color: #DDA15E;
+  --beige-light: rgba(221, 161, 94, 0.12);
+  --beige-border: rgba(221, 161, 94, 0.25);
   --header-height: 120px;
+}
+
+/* Mode clair — l'explorateur reste en thème foncé */
+[data-theme="light"] {
+  --background-color: #F7EDE1;
+  --text-color: #2d2a26;
+  --text-muted: #5c5854;
+  --accent-color: #DDA15E;
+  --beige-light: rgba(221, 161, 94, 0.18);
+  --beige-border: rgba(221, 161, 94, 0.4);
+}
+
+[data-theme="light"] .drawer-cv,
+[data-theme="light"] .header-cv {
+  color: #fff;
+}
+
+[data-theme="light"] .drawer-overlay.is-open {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .footer-nav a {
+  color: #2d2a26;
+}
+
+[data-theme="light"] .footer-copy {
+  color: #5c5854;
+}
+
+[data-theme="light"] .footer-gradient {
+  background: linear-gradient(180deg, transparent 0%, rgba(221, 161, 94, 0.06) 50%, rgba(221, 161, 94, 0.12) 100%);
+}
+
+/* Contact en mode clair : fond lisible et contraste */
+[data-theme="light"] .contact-section {
+  background-color: #e8dfd4;
+  color: #2d2a26;
+}
+
+[data-theme="light"] .contact-intro {
+  color: #5c5854;
+}
+
+[data-theme="light"] .contact-intro strong {
+  color: #2d2a26;
+}
+
+[data-theme="light"] .contact-links a {
+  color: #5c5854;
+}
+
+[data-theme="light"] .contact-links a:hover {
+  color: #DDA15E;
 }
 
 /* Base */
@@ -98,6 +151,69 @@ body {
 
 .header-burger:hover .burger div {
   background: var(--accent-color);
+}
+
+/* Bouton toggle thème (header) */
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: 12px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--beige-light);
+  border: 1px solid var(--beige-border);
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(221, 161, 94, 0.25);
+  transform: scale(1.05);
+}
+
+.theme-toggle .theme-icon {
+  position: absolute;
+  font-size: 1.1rem;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.theme-toggle .theme-icon-moon {
+  opacity: 1;
+}
+
+.theme-toggle .theme-icon-sun {
+  opacity: 0;
+}
+
+[data-theme="light"] .theme-toggle .theme-icon-moon {
+  opacity: 0;
+}
+
+[data-theme="light"] .theme-toggle .theme-icon-sun {
+  opacity: 1;
+}
+
+/* Toggle thème dans le drawer */
+.drawer-theme-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.theme-toggle-drawer {
+  margin-right: 0;
+}
+
+.drawer-theme-label {
+  font-size: 0.95rem;
+  color: var(--text-color);
 }
 
 /* Burger → croix quand le menu est ouvert */
@@ -340,7 +456,7 @@ main {
 .bouton-fleche:hover {
   color: var(--accent-color);
   border-color: var(--accent-color);
-  background-color: rgba(196, 165, 116, 0.1);
+  background-color: rgba(221, 161, 94, 0.1);
 }
 
 .bouton-fleche i {
@@ -403,7 +519,7 @@ main {
 }
 
 .about-block:hover {
-  border-color: rgba(196, 165, 116, 0.4);
+  border-color: rgba(221, 161, 94, 0.4);
 }
 
 .about-block-title {
@@ -502,7 +618,7 @@ main {
 
 .competence-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(196, 165, 116, 0.45);
+  border-color: rgba(221, 161, 94, 0.45);
 }
 
 .competence-icon {
@@ -597,7 +713,7 @@ main {
   min-height: 40vh;
   padding: 6rem 20px 7rem;
   text-align: center;
-  background-color: #161616;
+  background-color: #1e1e1e;
   color: var(--text-color);
 }
 
@@ -613,7 +729,7 @@ main {
 .contact-intro {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: var(--text-muted);
+  color: #c9c4be;
   margin: 0;
 }
 
@@ -652,7 +768,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--text-muted);
+  color: #c9c4be;
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s ease;
@@ -686,7 +802,7 @@ main {
   background: #161616;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(196, 165, 116, 0.25);
+  border: 1px solid rgba(221, 161, 94, 0.25);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
@@ -754,7 +870,7 @@ main {
 .explorer-filter-select {
   padding: 6px 10px;
   border-radius: 8px;
-  border: 1px solid rgba(196, 165, 116, 0.4);
+  border: 1px solid rgba(221, 161, 94, 0.4);
   background: #1c1c1c;
   color: var(--text-color);
   font-size: 0.85rem;
@@ -853,7 +969,7 @@ main {
 }
 
 .explorer-file.is-active {
-  background: rgba(196, 165, 116, 0.15);
+  background: rgba(221, 161, 94, 0.15);
   color: var(--accent-color);
 }
 
@@ -969,7 +1085,7 @@ main {
 .footer-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(196, 165, 116, 0.04) 50%, rgba(196, 165, 116, 0.08) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(221, 161, 94, 0.04) 50%, rgba(221, 161, 94, 0.08) 100%);
   pointer-events: none;
 }
 
@@ -1032,7 +1148,7 @@ main {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(196, 165, 116, 0.15);
+  background: rgba(221, 161, 94, 0.15);
   color: var(--accent-color);
   display: flex;
   align-items: center;

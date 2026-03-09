@@ -4,6 +4,42 @@
   var burger = document.querySelector('.header-burger');
   var drawerLinks = document.querySelectorAll('.drawer-nav-list a');
 
+  /* Thème clair / sombre */
+  var THEME_KEY = 'portfolio-theme';
+  var root = document.documentElement;
+
+  function getTheme() {
+    try {
+      return localStorage.getItem(THEME_KEY) || 'dark';
+    } catch (e) {
+      return 'dark';
+    }
+  }
+
+  function setTheme(theme) {
+    if (theme === 'light') {
+      root.setAttribute('data-theme', 'light');
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch (e) {}
+  }
+
+  function toggleTheme() {
+    var current = getTheme();
+    var next = current === 'light' ? 'dark' : 'light';
+    setTheme(next);
+  }
+
+  setTheme(getTheme());
+
+  var themeToggleHeader = document.getElementById('theme-toggle-header');
+  var themeToggleDrawer = document.getElementById('theme-toggle-drawer');
+  if (themeToggleHeader) themeToggleHeader.addEventListener('click', toggleTheme);
+  if (themeToggleDrawer) themeToggleDrawer.addEventListener('click', toggleTheme);
+
   /* Typing effect sur le titre hero */
   (function initTyping() {
     var el = document.getElementById('typing-title');
