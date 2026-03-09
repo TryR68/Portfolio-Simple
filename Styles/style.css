@@ -1160,6 +1160,32 @@ main {
   margin: 0;
 }
 
+/* Lecteur PDF / document dans l'explorateur */
+.explorer-preview-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.explorer-preview-viewer.hidden {
+  display: none;
+}
+
+.explorer-preview-viewer iframe {
+  width: 100%;
+  min-height: 420px;
+  height: 50vh;
+  max-height: 520px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: #1a1a1a;
+}
+
+.explorer-preview-link-pdf {
+  font-size: 0.85rem;
+}
+
 .explorer-preview-links {
   display: flex;
   flex-wrap: wrap;

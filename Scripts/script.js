@@ -106,6 +106,9 @@
     var descEl = document.getElementById('explorer-preview-desc');
     var linkSiteEl = document.getElementById('explorer-preview-link-site');
     var linkGithubEl = document.getElementById('explorer-preview-link-github');
+    var viewerEl = document.getElementById('explorer-preview-viewer');
+    var viewerIframe = document.getElementById('explorer-preview-iframe');
+    var viewerPdfLink = document.getElementById('explorer-preview-pdf-link');
 
     var currentGalleryIndex = 0;
     var currentGalleryImages = [];
@@ -132,21 +135,21 @@
         title: 'Carte de vœux — Préfecture de Colmar',
         meta: 'Design / Communication',
         desc: 'Création de la carte de vœux pour la préfecture de Colmar, adoptée officiellement.',
-        images: ['Images/projects/Carte_de_voeux.png'],
+        pdfUrl: 'Images/projects/carte-voeux.pdf',
         type: 'design'
       },
       4: {
         title: 'Maquette site Resort',
         meta: 'Webdesign / Figma',
         desc: 'Maquette d\'un site web pour un resort : structure, pages et design d\'interface.',
-        images: ['Images/projects/resort-bay1.png', 'Images/projects/resort-bay2.png'],
+        pdfUrl: 'Images/projects/resort-bay.pdf',
         type: 'webdesign'
       },
       5: {
         title: 'Newsletter JBL',
         meta: 'Design / Newsletter',
         desc: 'Design d\'une newsletter pour la marque JBL : mise en page, visuels et contenu éditorial.',
-        images: ['Images/projects/newsletter-jbl1.png', 'Images/projects/newsletter-jbl2.png'],
+        pdfUrl: 'Images/projects/newsletter-jbl.pdf',
         type: 'design'
       },
       6: {
@@ -164,6 +167,15 @@
         images: ['Images/projects/portfolio1.png', 'Images/projects/portfolio2.png', 'Images/projects/portfolio3.png'],
         siteUrl: 'https://tryr68.github.io/Portfolio_Trystan/',
         githubUrl: 'https://github.com/TryR68/Portfolio_Trystan',
+        type: 'developpement-web'
+      },
+      8: {
+        title: 'Pixel Art',
+        meta: 'HTML / CSS / JavaScript',
+        desc: 'Projet perso de pixel art en HTML, CSS et JavaScript — création basique et ludique.',
+        images: ['Images/projects/pixel-art.png'],
+        siteUrl: 'https://tryr68.github.io/Pixel-Art/',
+        githubUrl: 'https://github.com/TryR68/Pixel-Art',
         type: 'developpement-web'
       }
     };
@@ -236,6 +248,19 @@
       if (linkGithubEl) {
         linkGithubEl.href = p.githubUrl || '#';
         linkGithubEl.style.display = p.githubUrl ? '' : 'none';
+      }
+
+      if (viewerEl && viewerIframe && viewerPdfLink) {
+        if (p.pdfUrl) {
+          viewerEl.classList.remove('hidden');
+          viewerIframe.src = p.pdfUrl;
+          viewerPdfLink.href = p.pdfUrl;
+          viewerPdfLink.style.display = '';
+        } else {
+          viewerEl.classList.add('hidden');
+          viewerIframe.src = 'about:blank';
+          viewerPdfLink.style.display = 'none';
+        }
       }
 
       currentGalleryImages = getProjectImages(p);
